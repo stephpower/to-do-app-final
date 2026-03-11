@@ -388,30 +388,31 @@
         border-radius: var(--radius);
         padding: 10px 14px;
         font-size: 0.8rem;
-        line-height: 1.6;
+        line-height: 1.65;
         margin: 8px 0;
-        display: flex;
-        gap: 8px;
-        align-items: flex-start;
+        display: block;
       }
 
       .note {
         background: var(--destructive-bg);
         border: 1px solid var(--destructive-border);
         color: #991b1b;
+        border-left: 3px solid #fca5a5;
       }
 
       .tip {
         background: var(--muted-bg);
         border: 1px solid var(--border);
         color: var(--text-muted);
+        border-left: 3px solid var(--border);
       }
 
       .note-icon,
       .tip-icon {
-        flex-shrink: 0;
-        margin-top: 1px;
-        opacity: 0.7;
+        display: inline;
+        margin-right: 5px;
+        opacity: 0.8;
+        vertical-align: middle;
       }
 
       /* ── Lists ── */
@@ -607,6 +608,44 @@
         .chevron,
         .progress-bar {
           display: none;
+        }
+      }
+
+      /* ── Mobile ── */
+      @media (max-width: 480px) {
+        .page-wrap {
+          padding: 24px 16px 60px;
+        }
+
+        .section-body {
+          padding: 12px;
+        }
+
+        .section-header {
+          padding: 12px;
+        }
+
+        .section-tag {
+          display: none;
+        }
+
+        .note,
+        .tip {
+          padding: 10px 12px;
+          font-size: 0.8rem;
+        }
+
+        .step-list li,
+        .bullet-list li {
+          font-size: 0.825rem;
+        }
+
+        h1 {
+          font-size: 1.25rem;
+        }
+
+        .section-title {
+          font-size: 0.825rem;
         }
       }
     </style>
@@ -1131,10 +1170,10 @@ git push -u origin main</code>
           </div>
 
           <div class="note">
-            The git remote add origin</code> line is what connects your local folder to your new GitHub repo. Make sure the URL here is your new repo URL — not the old one. If you're unsure, run git remote -v</code> to check which repo you're currently connected to.
+            <span class="note-icon">⚠</span>The <code>git remote add origin</code> line is what connects your local folder to your new GitHub repo. Make sure the URL here is your new repo URL — not the old one. If you're unsure, run <code>git remote -v</code> to check which repo you're currently connected to.
           </div>
           <div class="tip">
-            If you see an error saying remote origin already exists</code>, run git remote remove origin</code> first, then re-run the git remote add origin</code> command with your new URL.
+            <span class="tip-icon">💡</span>If you see an error saying <code>remote origin already exists</code>, run <code>git remote remove origin</code> first, then re-run the <code>git remote add origin</code> command with your new URL.
           </div>
 
           <div class="sub-heading">4. Reconnect Vercel and Render</div>
