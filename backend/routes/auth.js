@@ -46,6 +46,7 @@ router.post('/signup', async (req, res) => {
       user: { id: saved._id, name: saved.name, email: saved.email },
     });
   } catch (error) {
+    ⁠ console.error(“Signup error:”, error); ⁠
     res.status(500).json({ error: 'Error creating account' });
   }
 });
@@ -84,9 +85,11 @@ router.post('/login', async (req, res) => {
       message: 'Login successful',
       token: token,
     });
-  } catch (error) {
-    res.status(500).json({ error: 'Error logging in' });
-  }
+  catch (error) {
+  console.error("Signup error:", error?.message || error);
+  return res.status(500).json({ error: "Error creating account" });
+}
+
 });
 
 export default router;

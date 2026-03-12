@@ -12,13 +12,11 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(
-  cors({
-    origin: 'https://to-do-app-final-one.vercel.app', // This is to allow our frontend to communicate with our backend
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
-    credentials: true,
-  }),
-);
+app.use(cors({
+  origin: "https://to-do-app-frontend-indol.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 // MongoDB Connection
 try {
