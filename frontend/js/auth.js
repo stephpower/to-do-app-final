@@ -1,4 +1,4 @@
-const API_URL = 'https://to-do-app-backend-ubgs.onrender.com';
+const API_URL = 'https://to-do-app-final-v9kb.onrender.com';
 
 //===================================
 // Helper arrow functions
